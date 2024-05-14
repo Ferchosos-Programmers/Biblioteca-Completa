@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+      <div>
+        <h2>LIBROS DISPONIBLES</h2>
+      </div>
+  
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12" id="filtrogenero">
+            <label for="" >Buscar por genero:</label>
+              <select class="form-control" [(ngModel)]="filtroGenero">
+                  <option value="">Todos los generos</option>
+                 @for (genero of generoUnico; track genero) {
+                  <option [value]="genero">{{genero}}</option>
+                 }
+              </select>
+          </div>
+        </div>
+      </div>
+  
+      <div class="gallery mt-3" id="gallery">
+        @for (libros of libros; track libros  ) {
+          @if (!filtroGenero || filtroGenero === libros.genero) {
+              <div class="col-md-3 mb-3">
+                  <div class="card">
+                      <img src="{{ libros.imagen }}" class="card-img-top" alt="{{ libros.titulo }}">
+                      <div class="card-body">
+                          <h5 class="card-title" id="info">{{ libros.titulo}} </h5>
+                          <h5 class="card-title" id="anio">Año de Publicacion: {{ libros.anio_publicacion }}</h5>
+                          <h5 class="card-title" id="genero">Genero: {{ libros.genero }}</h5>
+                          <h5 class="card-title" id="autor">Autor: {{libros.autor }}</h5>
+                          <a href="#" class="btn btn-sm" >VER DETALLES</a>
+                      </div>
+                  </div>
+              </div>
+          }
+        }
+      </div>
+    </div>
+  </div>
+  
