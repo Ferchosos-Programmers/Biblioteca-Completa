@@ -1,0 +1,109 @@
+{
+  
+  "libros": [
+    {
+      "id": 1,
+      "imagen": "https://es.web.img3.acsta.net/medias/nmedia/18/89/67/45/20061512.jpg",
+      "titulo": "El señor de los anillos",
+      "autor": "J.R.R. Tolkien",
+      "genero": "Fantasía",
+      "anio_publicacion": 1954
+    },
+    {
+      "id": 2,
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6iGFAR3YdowZqq26FeebHyE8GYYjXpc3Bu9iVedWGYw&s",
+      "titulo": "Cien años de soledad",
+      "autor": "Gabriel García Márquez",
+      "genero": "Realismo mágico",
+      "anio_publicacion": 1967
+    },
+    {
+      "id": 3,
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4YpSn6fdoCRjJ0brspQRxxA8dJVmm4a_N_57_AWEDEA&s",
+      "titulo": "1984",
+      "autor": "George Orwell",
+      "genero": "Ciencia ficción",
+      "anio_publicacion": 1949
+    },
+    {
+      "id": 4,
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCiUeMeIE52dBNpEp5rR1G6MfOAakCBFc8zSbq9mzASg&s",
+      "titulo": "Orgullo y prejuicio",
+      "autor": "Jane Austen",
+      "genero": "Romance",
+      "anio_publicacion": 1813
+    },
+    {
+      "id": 5,
+      "imagen": "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2016/12/harry-potter-piedra-filosofal.jpg",
+      "titulo": "Harry Potter y la piedra filosofal",
+      "autor": "J.K. Rowling",
+      "genero": "Fantasía",
+      "anio_publicacion": 1997
+    },
+    {
+      "id": 6,
+      "imagen": "https://images.cdn2.buscalibre.com/fit-in/360x360/73/b6/73b6fd96c31d26e2b6a3531808c1188c.jpg",
+      "titulo": "Don Quijote de la Mancha",
+      "autor": "Miguel de Cervantes",
+      "genero": "Novela de aventuras",
+      "anio_publicacion": 1605
+    },
+    {
+      "id": 7,
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXFu6MK0T_cVXPoPI6d3cq0rP0OqAnXgocL9SpUfG6wA&s",
+      "titulo": "Matar a un ruiseñor",
+      "autor": "Harper Lee",
+      "genero": "Ficción",
+      "anio_publicacion": 1960
+    },
+    {
+      "id": 8,
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs80PyWxw0gLOJPo0vnS7czcTAnLVthER82VrL9kO1AA&s",
+      "titulo": "Crónica de una muerte anunciada",
+      "autor": "Gabriel García Márquez",
+      "genero": "Realismo mágico",
+      "anio_publicacion": 1981
+    },
+    {
+      "id": 9,
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnIxxiU0qy2mdyfhg9FKRxdR1tZTQIwhQ_EHI1oXmGCg&s",
+      "titulo": "El Hobbit",
+      "autor": "J.R.R. Tolkien",
+      "genero": "Fantasía",
+      "anio_publicacion": 1937
+    },
+    {
+      "id": 10,
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQenlCwXUclRiizImqasswkWnFIB69mzmJXO9fRfl9wA&s",
+      "titulo": "El amor en los tiempos del cólera",
+      "autor": "Gabriel García Márquez",
+      "genero": "Romance",
+      "anio_publicacion": 1985
+    },
+    {
+      "id": 11,
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU00GHnd7axLq9mxtF9DocMPr078sAdo_geobSe_eddw&s",
+      "titulo": "La metamorfosis",
+      "autor": "Franz Kafka",
+      "genero": "Ficción",
+      "anio_publicacion": 1915
+    },
+    {
+      "id": 12,
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxnXDvDcwKeZ88Qs2jTV9uGY7LLnzPNp29J4TabIrNtg&s",
+      "titulo": "Titanic",
+      "autor": "James Cameron",
+      "genero": "Romance",
+      "anio_publicacion": 1997
+    },
+    {
+      "id": "14",
+      "titulo": "Type Script",
+      "autor": "Fernando Mallitaxi",
+      "genero": "Programacion",
+      "anio_publicacion": 2020
+    }
+  ]
+  
+}
