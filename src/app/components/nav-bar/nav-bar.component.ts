@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
+import { UsuariosService } from '../../services/usuarios.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -10,4 +11,22 @@ import { RouterLink } from '@angular/router';
 })
 export class NavBarComponent {
 
+  servicio = inject(UsuariosService)
+  constructor(private router:Router){}
+  token: any
+  rolUsuario: any;
+
+  
+  ///Cerrar Sesion
+  logout() {
+    localStorage.removeItem("token")
+    window.location.href=('login')
+  }
+  
+  ///Ocultar ventanas
+  ocultar = localStorage.getItem('token')
+  
+  ///Roles par anavegacion
+
+  
 }

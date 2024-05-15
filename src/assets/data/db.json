@@ -3,7 +3,8 @@
     {
       "email": "admin@mail.com",
       "password": "$2a$10$dTjVC7uKiuoJToej.hr8C.73DsWdyGr4gwH7Ax21Z4eHjqLYYqBf2",
-      "id": 1
+      "id": 1,
+      "roles":"admin"
     }
   ]
 }

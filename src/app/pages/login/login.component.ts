@@ -21,7 +21,11 @@ export class LoginComponent {
   login(formulario:any){
     this.servicio.postUser(formulario.value).subscribe(p =>{
       this.token = p.accessToken
-      console.log(this.token);
+      if (this.token != '') {
+        // console.log(this.token);
+        localStorage.setItem("token",'true')
+        window.location.href=('gUsuarios')
+      }
       
     })
   }

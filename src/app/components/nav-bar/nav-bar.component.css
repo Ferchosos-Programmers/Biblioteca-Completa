@@ -1,0 +1,34 @@
+/* Estilos personalizados para la barra de navegación */
+.navbar {
+    background-color: #343a40; /* Cambiar el color de fondo */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Agregar sombra */
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem; /* Tamaño de fuente para el texto del logo */
+  }
+  
+  .navbar-nav .nav-link {
+    color: #ffffff; /* Cambiar el color del texto del enlace */
+    transition: 0.3s; /* Agregar transición suave */
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #ffc107; /* Cambiar el color del texto del enlace al pasar el mouse */
+  }
+  
+  /* Estilos para el botón de cerrar sesión */
+  .navbar-nav .btn-danger {
+    margin-left: 10px; /* Añadir un margen izquierdo */
+  }
+  
+  /* Estilos para el botón de hamburguesa en dispositivos móviles */
+  .navbar-toggler-icon {
+    background-color: #ffffff; /* Cambiar el color de las líneas del ícono */
+  }
+  
+  /* Cambiar el color del texto del botón en dispositivos móviles */
+  .navbar-dark .navbar-toggler {
+    border-color: #ffffff; /* Cambiar el color del borde del botón */
+  }
+  
