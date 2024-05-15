@@ -1,10 +1,18 @@
 {
   "users": [
     {
+      "email": "fernando@gmail.com",
+      "password": "$2a$10$MFLgkZ5JnwOBlmPQYJihPuI43OketpVbqELcScciTDSHejbrDTrQe",
+      "edad": 19,
+      "roles": "bibliotecario",
+      "id": 2
+    },
+    {
       "email": "admin@mail.com",
-      "password": "$2a$10$dTjVC7uKiuoJToej.hr8C.73DsWdyGr4gwH7Ax21Z4eHjqLYYqBf2",
-      "id": 1,
-      "roles":"admin"
+      "password": "$2a$10$vWqerhsB258OOP/.y8.HiOCM24KvYbqcPI9HeTRSzlRH/w9aBClZy",
+      "edad": 45,
+      "roles": "administrador",
+      "id": 3
     }
   ]
 }

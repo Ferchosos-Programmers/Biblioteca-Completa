@@ -8,7 +8,10 @@ import { GestionLibrosComponent } from './pages/gestion-libros/gestion-libros.co
 import { FormularioComponent } from './components/formulario/formulario.component';
 import { FormularioEditarLibrosComponent } from './pages/formulario-editar-libros/formulario-editar-libros.component';
 import { LoginComponent } from './pages/login/login.component';
-import { loginGuard } from './guards/login.guard';
+import { loginGuard, registroGuard } from './guards/login.guard';
+import { catalogoGuard, gLibrosGuard, gUsuariosGuard, prestamosGuard } from './guards/proteccion-rutas.guard';
+import { RegistroComponent } from './pages/registro/registro.component';
+import { Registro2Component } from './pages/registro2/registro2.component';
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -18,7 +21,9 @@ export const routes: Routes = [
     {path: 'gLibros', component: GestionLibrosComponent,canActivate:[loginGuard]},
     {path: 'formulario', component: FormularioComponent,canActivate:[loginGuard]},
     {path: 'editar/:idLibros', component: FormularioEditarLibrosComponent,canActivate:[loginGuard]},
-    {path: 'login', component: LoginComponent},
+    {path: 'login', component: LoginComponent,canActivate:[catalogoGuard,prestamosGuard,gUsuariosGuard,gLibrosGuard]},
+    {path: 'registro', component: RegistroComponent,canMatch:[registroGuard]},
+    {path: 'registro', component: Registro2Component},
 
     {path: "", redirectTo:'home', pathMatch:'full'},
     {path:"**", component:Error404Component}

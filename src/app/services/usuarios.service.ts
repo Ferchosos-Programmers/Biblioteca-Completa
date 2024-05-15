@@ -25,6 +25,11 @@ export class UsuariosService {
     return this.http.delete(`${this.API_USUARIOS}/${id}`);
   }
 
+  // Registar usuarios
+  postUser2(usuarios:any):Observable<any>{
+    return this.http.post(this.API_USUARIOS,usuarios)
+  }
+
   // PARA LOGIN GUARDS
   private API_USERS = "http://localhost:3000/login";
 

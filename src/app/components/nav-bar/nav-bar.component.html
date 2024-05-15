@@ -28,10 +28,13 @@
             <a class="nav-link" routerLink="gLibros">Gestion de Libros</a>
           </li>
         }
+        <li class="nav-item">
+          <a class="nav-link" routerLink="registro">Registrarse</a>
+        </li>
       </ul>
     </div>
     @if (ocultar == 'true') {
-      <div class="ml-auto"> <!-- Este div empujará el botón hacia la derecha -->
+      <div class="ml-auto">
         <button class="btn btn-sm btn-danger" (click)="logout()">Cerrar Sesión</button>
       </div>
     }

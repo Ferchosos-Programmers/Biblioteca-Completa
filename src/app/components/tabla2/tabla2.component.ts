@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { UsuariosService } from '../../services/usuarios.service';
 import Swal from 'sweetalert2';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-tabla2',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './tabla2.component.html',
   styleUrl: './tabla2.component.css'
 })

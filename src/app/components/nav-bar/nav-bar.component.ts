@@ -16,7 +16,6 @@ export class NavBarComponent {
   token: any
   rolUsuario: any;
 
-  
   ///Cerrar Sesion
   logout() {
     localStorage.removeItem("token")
@@ -27,6 +26,6 @@ export class NavBarComponent {
   ocultar = localStorage.getItem('token')
   
   ///Roles par anavegacion
-
+  
   
 }
