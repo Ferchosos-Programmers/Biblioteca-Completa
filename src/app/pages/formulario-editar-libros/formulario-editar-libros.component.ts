@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { LibrosService } from '../../services/libros.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 
@@ -17,27 +17,55 @@ export class FormularioEditarLibrosComponent {
   autor: any;
   genero: any;
   anio_publicacion: any;
+  imagen: string = '';
 
-  servicio = inject(LibrosService)
-  router = inject(ActivatedRoute)
+  constructor(private route: ActivatedRoute, private servicio: LibrosService) { }
 
   ngOnInit(): void {
-    this.router.params.subscribe(l =>{
-      this.servicio.getLibrosUnico(l['idLibros']).subscribe(p =>{
-        this.id = p.id
-        this.titulo = p.titulo
-        this.autor = p.autor
-        this.genero = p.genero
-        this.anio_publicacion = p.anio_publicacion
-      })
-    })    
+    // Obtener el ID del libro de los parámetros de la ruta
+    this.id = this.route.snapshot.paramMap.get('id');
+
+    // Obtener los detalles del libro a editar y prellenar el formulario
+    this.servicio.getLibrosUnico(this.id).subscribe(libro => {
+      this.titulo = libro.titulo;
+      this.autor = libro.autor;
+      this.genero = libro.genero;
+      this.anio_publicacion = libro.anio_publicacion;
+      // También puedes cargar la imagen aquí si tienes la URL en la base de datos
+    });
   }
 
-  editar( datos:any){
-    this.servicio.putLibros(datos.value).subscribe(() => {
-      // window.location.reload();
-      window.location.href=('gLibros')
-  });
+  guardar(formulario: NgForm) {
+    const datos = {
+      id: this.id,
+      titulo: this.titulo,
+      autor: this.autor,
+      genero: this.genero,
+      anio_publicacion: this.anio_publicacion,
+      imagen: this.imagen // Puedes enviar la URL de la imagen al servicio
+    };
+
+    // Enviar los datos actualizados al servicio para actualizar el libro en la base de datos
+    this.servicio.putLibros(datos).subscribe(() => {
+      // Redirigir después de guardar
+      window.location.href = 'gLibros';
+    });
+  }
+
+  onFileSelected(event: any) {
+    const file: File = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      // Convertir la imagen en una URL
+      this.imagen = reader.result as string;
+    };
+
+    reader.readAsDataURL(file);
+  }
+
+  cancelar() {
+    window.location.href = 'gLibros';
   }
 
 }

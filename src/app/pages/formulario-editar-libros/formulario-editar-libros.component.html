@@ -1,6 +1,6 @@
 <div class="container">
     <h2 class="text-center mb-4">Editar  Registro de Libros</h2>
-    <form (ngSubmit)="editar(formulario)" #formulario="ngForm">
+    <form (ngSubmit)="guardar(formulario)" #formulario="ngForm">
         <div class="form-group">
             <label for="titulo">ID:</label>
             <input type="text" class="form-control" id="id" name="id" placeholder="Ingrese el ID" [(ngModel)]="id" >
@@ -21,10 +21,17 @@
             <label for="anio_publicacion">Año de Publicación:</label>
             <input type="number" class="form-control" id="anio_publicacion" name="anio_publicacion" placeholder="Ingrese el año de publicación" [(ngModel)]="anio_publicacion">
         </div>
+        <div class="form-group">
+            <label for="imagen">Imagen:</label>
+            <input type="file" class="form-control-file" id="imagen" name="imagen" (change)="onFileSelected($event)" accept="image/*">
+            <div class="invalid-feedback">
+                Por favor, seleccione una imagen válida.
+            </div>
+        </div>
 
         <div class="text-center">
             <button type="submit" class="btn btn-primary btn-block mt-4">Editar Libro</button>
-            <button type="submit" class="btn btn-danger mt-4" style="margin-left: 2%;" [routerLink]="['../gLibros']">Regresar a Libros</button> 
+            <button type="" class="btn btn-danger mt-4" style="margin-left: 2%;" (click)="cancelar()">Regresar a Libros</button> 
         </div>
     </form>
 </div>

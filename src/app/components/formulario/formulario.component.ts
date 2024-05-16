@@ -17,16 +17,31 @@ export class FormularioComponent {
   autor: any;
   genero: any;
   anio_publicacion: any;
+  imagen: string = ''; // Variable para almacenar la URL de la imagen
 
-  servicio = inject(LibrosService);
+  constructor(private servicio: LibrosService) {}
 
   guardar(datos: NgForm) {
     console.log(datos.value);
-    this.servicio.postLibros(datos.value).subscribe(() => {
-        // window.location.reload();
-        window.location.href=('gLibros')
+    // Enviar datos y URL de la imagen al servicio para el registro en la base de datos
+    const datosConImagen = { ...datos.value, imagen: this.imagen };
+    this.servicio.postLibros(datosConImagen).subscribe(() => {
+      // Redireccionar después de guardar
+      window.location.href = 'gLibros';
     });
-}
+  }
+
+  onFileSelected(event: any) {
+    const file: File = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      // Convertir la imagen en una URL
+      this.imagen = reader.result as string;
+    };
+
+    reader.readAsDataURL(file);
+  }
 
 
 }
