@@ -3,11 +3,12 @@ import Swal from 'sweetalert2';
 import { LibrosService } from '../../services/libros.service';
 import { RouterLink } from '@angular/router';
 import { FormularioComponent } from '../formulario/formulario.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-tabla',
   standalone: true,
-  imports: [RouterLink,FormularioComponent],
+  imports: [RouterLink,FormularioComponent,FormsModule],
   templateUrl: './tabla.component.html',
   styleUrl: './tabla.component.css'
 })
@@ -15,12 +16,18 @@ export class TablaComponent {
 
   libros: any[]=[];
   id:any;
+  filtroGenero: string = '';
+  generoUnico: string[] = [];
   
   constructor(private librosService: LibrosService) {}
 
   ngOnInit(): void {
-    this.cargarLibros();
+    this.librosService.getLibros().subscribe((libros: any[]) => {
+      this.libros = libros; // Asignar productos después de obtenerlos
+      this.calcularGeneroUnico();
+    });
   }
+
 
   cargarLibros() {
     this.librosService.getLibros().subscribe(
@@ -31,6 +38,14 @@ export class TablaComponent {
         console.log('Error al cargar los libros', error);
       }
     );
+  }
+
+  calcularGeneroUnico(): void {
+    const generoSet = new Set<string>();
+    this.libros.forEach(libros => {
+      generoSet.add(libros.genero);
+    });
+    this.generoUnico = Array.from(generoSet);
   }
 
   eliminar(id: any) {

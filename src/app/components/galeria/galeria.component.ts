@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { LibrosService } from '../../services/libros.service';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-galeria',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,RouterLink],
   templateUrl: './galeria.component.html',
   styleUrl: './galeria.component.css'
 })

@@ -6,7 +6,21 @@
                 <button class="btn btn-sm btn-primary" id="btn-nw" [routerLink]="['/formulario']"> Nuevo Libro</button>
             </div>
         </div>
-        <!-- <app-formulario></app-formulario> -->
+
+        <div class="container">
+            <div class="row">
+              <div class="col-md-12" id="filtrogenero">
+                <label for="" >Buscar por genero:</label>
+                  <select class="form-control" [(ngModel)]="filtroGenero">
+                      <option value="">Todos los generos</option>
+                     @for (genero of generoUnico; track genero) {
+                      <option [value]="genero">{{genero}}</option>
+                     }
+                  </select>
+              </div>
+            </div>
+          </div>
+
         <div class="col-md-12">
             <div class="table-responsive">
                 <table class="table table-striped table-sm table-bordered text-center">
@@ -23,18 +37,20 @@
                     </thead>
                     <tbody>
                         @for (libros of libros; track libros) {
-                        <tr>
-                            <td>{{libros.id}}</td>
-                            <td><img src="{{libros.imagen}}" alt="" class="product-image"></td>
-                            <td>{{libros.titulo}}</td>
-                            <td>{{libros.autor}}</td>
-                            <td>{{libros.genero}}</td>
-                            <td>{{libros.anio_publicacion}}</td>
-                            <td>
-                                <button class="btn btn-sm btn-primary" [routerLink]="['/editar',libros.id]">Editar</button> |
-                                <button class="btn btn-sm btn-danger" (click)="confirmarEliminar(libros.id)">Eliminar</button>
-                            </td>
-                        </tr>
+                            @if (!filtroGenero || filtroGenero === libros.genero) {
+                                <tr>
+                                    <td>{{libros.id}}</td>
+                                    <td><img src="{{libros.imagen}}" alt="" class="product-image"></td>
+                                    <td>{{libros.titulo}}</td>
+                                    <td>{{libros.autor}}</td>
+                                    <td>{{libros.genero}}</td>
+                                    <td>{{libros.anio_publicacion}}</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary" [routerLink]="['/editar',libros.id]">Editar</button> |
+                                        <button class="btn btn-sm btn-danger" (click)="confirmarEliminar(libros.id)">Eliminar</button>
+                                    </td>
+                                </tr>
+                            }
                         }
                     </tbody>
                 </table>
