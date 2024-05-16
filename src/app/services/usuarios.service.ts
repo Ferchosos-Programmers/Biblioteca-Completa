@@ -30,6 +30,10 @@ export class UsuariosService {
     return this.http.post(this.API_USUARIOS,usuarios)
   }
 
+  obtenerPermisos(): Observable<any[]> {
+    return this.http.get<any[]>(this.API_USUARIOS);
+  }
+
   // PARA LOGIN GUARDS
   private API_USERS = "http://localhost:3000/login";
 

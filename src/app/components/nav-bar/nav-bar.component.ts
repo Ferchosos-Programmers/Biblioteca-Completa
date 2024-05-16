@@ -14,7 +14,7 @@ export class NavBarComponent {
   servicio = inject(UsuariosService)
   constructor(private router:Router){}
   token: any
-  rolUsuario: any;
+  roles:any
 
   ///Cerrar Sesion
   logout() {
@@ -26,6 +26,18 @@ export class NavBarComponent {
   ocultar = localStorage.getItem('token')
   
   ///Roles par anavegacion
-  
+  permiso(){
+    this.servicio.getUsuarios().subscribe(p =>{
+      this.roles = p.accessToken
+      if (this.roles == 'administrador') {
+        localStorage.setItem("token",'true')
+        window.location.href=('gUsuarios')
+      }else{
+        localStorage.setItem("token",'true')
+        window.location.href=('gUsuarios')
+      }
+      
+    })
+  }
   
 }
